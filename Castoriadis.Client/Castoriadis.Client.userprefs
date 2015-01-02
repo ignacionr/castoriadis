@@ -1,0 +1,34 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Castoriadis.Server/NamespaceBinding.cs">
+    <Files>
+      <File FileName="Agora.cs" Line="1" Column="1" />
+      <File FileName="Torch.cs" Line="1" Column="1" />
+      <File FileName="Pool.cs" Line="1" Column="1" />
+      <File FileName="PoolResource.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console/Program.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console/GlobalContext.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console/SemanticContext.cs" Line="1" Column="1" />
+      <File FileName="ServiceRegistration.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Server/NamespaceBinding.cs" Line="85" Column="22" />
+      <File FileName="../Calculator.Castoriadis/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Calculator.Castoriadis" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="Castoriadis.Client" expanded="True" />
+          <Node name="Castoriadis.Server" expanded="True" selected="True">
+            <Node name="References" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
