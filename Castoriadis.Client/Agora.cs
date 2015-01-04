@@ -2,25 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NetMQ;
-using Newtonsoft.Json;
+using ServiceStack;
 
 namespace Castoriadis.Client
 {
-	public class Agora
+	public class Agora: IAgora
 	{
-		Pool<NetMQSocket,List<string>> socketPool;
-		NetMQContext context = NetMQContext.Create();
+		Pool<ISocket,List<string>> socketPool;
+		INetworkContext context;
 		Torch torch;
 
-		NetMQSocket Connect (List<string> arg)
+		ISocket Connect (List<string> arg)
 		{
 			var sock = context.CreateRequestSocket();
-			arg.ForEach(endpoint => sock.Connect (endpoint));
+			arg.ForEach(sock.Connect);
 			return sock;
 		}
 
-		public Agora() {
-			socketPool = new Pool<NetMQSocket, List<string>> (Connect);
+		public Agora(INetworkContext networkContext = null) {
+			if (networkContext == null) {
+				networkContext = new NetMQNetworkContext ();
+			}
+			socketPool = new Pool<ISocket, List<string>> (Connect);
 			// try to connect to a local torch, or setup one
 			torch = new Torch (this.context);
 			torch.Start();
@@ -44,10 +47,13 @@ namespace Castoriadis.Client
 			// obtain a connected socket
 			using (var sock = socketPool.Get (regs)) {
 				// issue the query
-				sock.R.Send (string.Join (" ", item, JsonConvert.SerializeObject (query)));
+				sock.R.Send (query == null ? item : string.Join (" ", item, DynamicJson.Serialize(query)));
 				// unpack the results
 				var text = sock.R.ReceiveString(TimeSpan.FromMilliseconds(500));
-				return JsonConvert.DeserializeObject<dynamic> (text);
+				if (text == null) {
+					throw new TimeoutException ();
+				}
+				return DynamicJson.Deserialize(text);
 			}
 		}
 	}

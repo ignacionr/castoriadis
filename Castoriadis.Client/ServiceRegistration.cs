@@ -1,10 +1,9 @@
 using System;
-using System.Linq;
-using NetMQ;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
+using NetMQ;
 
 namespace Castoriadis.Client
 {

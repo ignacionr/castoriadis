@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Castoriadis.Client;
+using ServiceStack;
 
 namespace Castoriadis.Console
 {
@@ -8,16 +9,24 @@ namespace Castoriadis.Console
 	{
 		protected bool HandlesText { get; set; }
 
-		protected abstract Func<string,SemanticContext> Resolve(string token);
+		protected abstract Func<object,SemanticContext> Resolve(string token);
 
 		public SemanticContext Process (string text) {
-			var tokens = text.Split (' ');
-			var subContext = Resolve (tokens.First ());
+			try {
+			var idxSpace = text.IndexOf (' ');
+			var item = idxSpace >= 0 ? text.Substring (0, idxSpace) : text;
+			object query = idxSpace >= 0 ? text.Substring (idxSpace + 1) : default(object);
+			var subContext = Resolve (item);
 			if (null == subContext) {
 				this.Result = "Command not found.";
 				return this;
 			} else {
-				return subContext (string.Join (" ", tokens.Skip (1)));
+				return subContext (query);
+			}
+			}
+			catch(Exception ex) {
+				this.Result = ex.Message;
+				return this;
 			}
 		}
 

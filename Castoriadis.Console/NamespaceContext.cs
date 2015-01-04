@@ -23,7 +23,7 @@ namespace Castoriadis.Console
 
 		#region implemented abstract members of SemanticContext
 
-		protected override Func<string, SemanticContext> Resolve (string token)
+		protected override Func<object, SemanticContext> Resolve (string token)
 		{
 			if (token == "back")
 				return t => parentContext;

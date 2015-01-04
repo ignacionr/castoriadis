@@ -3,17 +3,22 @@ using Castoriadis.Client;
 
 namespace Castoriadis.Console
 {
-	class MainClass
+	public class MainClass
 	{
+		public static Func<IAgora> agoraFactory = () => new Agora();
+		public static Func<string> _readCommand = System.Console.ReadLine;
+		public static Action<object> _writeResult = System.Console.WriteLine;
+		public static Action<SemanticContext> _prompt = ctx => System.Console.Write ("{0}> ", ctx);
+
 		public static void Main (string[] args)
 		{
-			var context = new GlobalContext();
+			var context = new GlobalContext(agoraFactory());
 			SemanticContext currentContext = context;
 			while (!context.End) {
-				System.Console.Write ("{0}> ", currentContext);
-				var text = System.Console.ReadLine ();
+				_prompt(currentContext);
+				var text = _readCommand ();
 				currentContext = currentContext.Process (text);
-				System.Console.WriteLine (currentContext.Result);
+				_writeResult (currentContext.Result);
 			}
 		}
 	}

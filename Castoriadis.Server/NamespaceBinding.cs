@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using NetMQ;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using ServiceStack.Text;
+using ServiceStack;
 
 namespace Castoriadis.Server
 {
@@ -86,6 +88,7 @@ namespace Castoriadis.Server
 			TellTorch (message);
 		}
 
+		Dictionary<string,Func<string,object>> exactHandlers = new Dictionary<string, Func<string, object>>();
 		Func<string,string,object> catchAll;
 
 		public Task RunService() {
@@ -98,20 +101,31 @@ namespace Castoriadis.Server
 				var query = (idxSpace >= 0) ? cmd.Substring (idxSpace + 1) : string.Empty;
 					object result = null;
 					bool handled = false;
-					if (catchAll != null) {
+					Func<string,object> exactHandler = null;
+					if (this.exactHandlers.TryGetValue(item, out exactHandler)) {
+						result = exactHandler (query);
+						handled = true;
+					}
+					else if (catchAll != null) {
 						result = catchAll (item, query);
 						handled = true;
 					}
 					if (!handled) {
 						result = "Command not found!";
 					}
-					this.sock.Send (JsonConvert.SerializeObject (result));
+					this.sock.Send (result.ToJson());
 				}
 			}
 		}
 
 		public NamespaceBinding HandleAll(Func<string,string,object> catcher) {
 			this.catchAll = catcher;
+			return this;
+		}
+
+		public NamespaceBinding HandleTopic<TQ>(string topic, Func<TQ,object> handler) {
+			var jsonSer = new JsonSerializer<TQ> ();
+			this.exactHandlers.Add(topic, qs => handler(jsonSer.DeserializeFromString(qs)));
 			return this;
 		}
 

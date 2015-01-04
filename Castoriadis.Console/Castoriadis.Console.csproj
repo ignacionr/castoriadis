@@ -33,6 +33,9 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\Castoriadis.Client\packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -47,5 +50,8 @@
       <Project>{194A355B-439C-403A-889D-90A14A4F7BF0}</Project>
       <Name>Castoriadis.Client</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

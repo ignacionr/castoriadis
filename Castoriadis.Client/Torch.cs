@@ -1,22 +1,21 @@
 using System;
 using System.Linq;
-using NetMQ;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using System.Reflection;
+using ServiceStack;
 
 namespace Castoriadis.Client
 {
 	public class Torch
 	{
-		NetMQContext netMqContext;
+		INetworkContext netMqContext;
 
-		NetMQ.NetMQSocket sock;
+		ISocket sock;
 
 		Dictionary<string,List<ServiceRegistration>> nsRegistrations = new Dictionary<string, List<ServiceRegistration>>();
 
-		public Torch(NetMQContext context) {
+		public Torch(INetworkContext context) {
 			this.netMqContext = context;
 		}
 
@@ -31,7 +30,7 @@ namespace Castoriadis.Client
 				return IdentifyMyself ();
 			}
 			this.sock.Send ("who");
-			return this.sock.ReceiveString ();
+			return this.sock.ReceiveString (TimeSpan.FromMilliseconds(500));
 		}
 
 		public void Start ()
@@ -111,7 +110,7 @@ namespace Castoriadis.Client
 						if (!handlers.TryGetValue (parts [0], out handler)) {
 							handler = not_found;
 						}
-						this.sock.Send(JsonConvert.SerializeObject(handler(parts)));
+						this.sock.Send(DynamicJson.Serialize(handler(parts)));
 					}
 					catch(Exception ex) {
 						this.sock.Send (ex.Message);
@@ -130,8 +129,8 @@ namespace Castoriadis.Client
 		{
 			if (!this.IsLocal) {
 				this.sock.Send ("get-registrations");
-				var text = this.sock.ReceiveString ();
-				this.nsRegistrations = JsonConvert.DeserializeObject<Dictionary<string,List<ServiceRegistration>>>(text);
+				var text = this.sock.ReceiveString (TimeSpan.FromMilliseconds(500));
+				this.nsRegistrations = text.FromJson<Dictionary<string,List<ServiceRegistration>>>();
 			}
 		}
 

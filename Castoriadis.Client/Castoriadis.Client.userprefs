@@ -1,34 +1,46 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Castoriadis.Server/NamespaceBinding.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Castoriadis.Client.Test/Basic.cs">
     <Files>
-      <File FileName="Agora.cs" Line="1" Column="1" />
       <File FileName="Torch.cs" Line="1" Column="1" />
       <File FileName="Pool.cs" Line="1" Column="1" />
       <File FileName="PoolResource.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console/Program.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console/GlobalContext.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console/SemanticContext.cs" Line="1" Column="1" />
-      <File FileName="ServiceRegistration.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Server/NamespaceBinding.cs" Line="85" Column="22" />
+      <File FileName="../Castoriadis.Server/NamespaceBinding.cs" Line="1" Column="1" />
       <File FileName="../Calculator.Castoriadis/Program.cs" Line="1" Column="1" />
+      <File FileName="../Metwit.Castoriadis/LatLong.cs" Line="1" Column="1" />
+      <File FileName="Agora.cs" Line="1" Column="1" />
+      <File FileName="../Metwit.Castoriadis/Program.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console/SemanticContext.cs" Line="18" Column="4" />
+      <File FileName="../Castoriadis.Console/NamespaceContext.cs" Line="13" Column="3" />
+      <File FileName="../Castoriadis.Console/Program.cs" Line="1" Column="1" />
+      <File FileName="ServiceRegistration.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis/Program.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis/CalendarReference.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis/CalendarManager.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console.Test/MyClass.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console.Test/Basic.cs" Line="24" Column="46" />
+      <File FileName="../Castoriadis.Console/GlobalContext.cs" Line="17" Column="34" />
+      <File FileName="IAgora.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console.Test/AgoraMock.cs" Line="25" Column="36" />
+      <File FileName="../Castoriadis.Client.Test/Basic.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Calculator.Castoriadis" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
-          <Node name="Castoriadis.Client" expanded="True" />
-          <Node name="Castoriadis.Server" expanded="True" selected="True">
-            <Node name="References" expanded="True" />
-          </Node>
+          <Node name="Castoriadis.Client.Test" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>query</Value>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/ignacio/Projects/castoriadis/Metwit.Castoriadis/Program.cs" line="15" column="13" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

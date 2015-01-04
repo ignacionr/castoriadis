@@ -35,8 +35,8 @@
       <HintPath>packages\NetMQ.3.3.0.11\lib\net40\NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +46,11 @@
     <Compile Include="PoolResource.cs" />
     <Compile Include="Pool.cs" />
     <Compile Include="ServiceRegistration.cs" />
+    <Compile Include="IAgora.cs" />
+    <Compile Include="ISocket.cs" />
+    <Compile Include="INetworkContext.cs" />
+    <Compile Include="NetMQNetworkContext.cs" />
+    <Compile Include="SocketWrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

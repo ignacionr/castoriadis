@@ -6,8 +6,7 @@ namespace Calculator.Castoriadis
 {
 	class MainClass
 	{
-		public static void Main (string[] args)
-		{
+		public static void Main (string[] args)	{
 			var interpreter = new Interpreter();
 			using (var ns = NamespaceBinding.Create("calc")) {
 				ns

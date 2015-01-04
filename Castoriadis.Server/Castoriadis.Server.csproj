@@ -35,9 +35,8 @@
       <HintPath>..\Castoriadis.Client\packages\NetMQ.3.3.0.11\lib\net40\NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=c7439020c8fedf87">
-      <Private>False</Private>
-      <Package>monodevelop</Package>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\Castoriadis.Client\packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

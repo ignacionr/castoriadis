@@ -9,20 +9,44 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Console", "..\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Castoriadis", "..\Calculator.Castoriadis\Calculator.Castoriadis.csproj", "{6016AF97-56F4-48C9-80D1-A9A2C6B86437}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metwit.Castoriadis", "..\Metwit.Castoriadis\Metwit.Castoriadis.csproj", "{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Castoriadis", "..\Calendar.Castoriadis\Calendar.Castoriadis.csproj", "{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Console.Test", "..\Castoriadis.Console.Test\Castoriadis.Console.Test.csproj", "{84BC2ADA-1857-452E-A42D-8611239CE0A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Client.Test", "..\Castoriadis.Client.Test\Castoriadis.Client.Test.csproj", "{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Release|Any CPU.Build.0 = Release|Any CPU
 		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -34,5 +58,9 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = ..\Castoriadis.Console\Castoriadis.Console.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
 	EndGlobalSection
 EndGlobal
