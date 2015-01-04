@@ -5,15 +5,27 @@ namespace Castoriadis.Client.Test
 {
 	class NetworkContextMock: INetworkContext
 	{
+        public Action<MockSocket> mockSocketCreated;
+
 		#region INetworkContext implementation
 		public ISocket CreateRequestSocket ()
 		{
-			return new MockSocket (false);
+            return CreateMockSocket(false);
 		}
+
+        private ISocket CreateMockSocket(bool beResponse)
+        {
+            var res = new MockSocket(beResponse);
+            if (mockSocketCreated != null)
+            {
+                mockSocketCreated(res);
+            }
+            return res;
+        }
 		public ISocket CreateResponseSocket ()
 		{
-			return new MockSocket (true);
-		}
+            return CreateMockSocket(true);
+        }
 		#endregion
 	}
 }

@@ -1,11 +1,17 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using NUnit.Framework;
 
 namespace Castoriadis.Client.Test
 {
 	public class MockSocket: ISocket
 	{
-		bool isResponseSocket;
+		public bool isResponseSocket;
+        public bool allowBind;
+        public Queue<string> receivedStrings = new Queue<string>();
+        public Queue<string> sentStrings = new Queue<string>();
+        public Action<string> processConnect = ep => { };
 
 		public MockSocket (bool isResponse)
 		{
@@ -16,26 +22,30 @@ namespace Castoriadis.Client.Test
 		public void Bind (string endpoint)
 		{
 			Assert.IsTrue (isResponseSocket);
+            if (!allowBind) throw new OperationCanceledException();
 		}
 		public void Connect (string endpoint)
 		{
 			Assert.IsFalse (isResponseSocket);
+            processConnect(endpoint);
 		}
 		public void Send (string contents)
 		{
-			throw new NotImplementedException ();
+            this.sentStrings.Enqueue(contents);
 		}
 		public string ReceiveString (TimeSpan timeout)
 		{
-			throw new NotImplementedException ();
+            if (receivedStrings.Count > 0)
+                return receivedStrings.Dequeue();
+            Thread.Sleep(timeout);
+            return null;
 		}
 		#endregion
 		#region IDisposable implementation
 		public void Dispose ()
 		{
-			throw new NotImplementedException ();
+			;
 		}
 		#endregion
 	}
 }
-

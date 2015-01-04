@@ -25,6 +25,7 @@ namespace Castoriadis.Client
 			}
 			socketPool = new Pool<ISocket, List<string>> (Connect);
 			// try to connect to a local torch, or setup one
+            this.context = networkContext;
 			torch = new Torch (this.context);
 			torch.Start();
 		}
