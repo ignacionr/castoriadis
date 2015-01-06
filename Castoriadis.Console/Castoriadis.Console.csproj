@@ -50,6 +50,10 @@
       <Project>{194A355B-439C-403A-889D-90A14A4F7BF0}</Project>
       <Name>Castoriadis.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Castoriadis.Comm\Castoriadis.Comm.csproj">
+      <Project>{5B8FA4CC-E284-486D-BC79-89C84BC17E84}</Project>
+      <Name>Castoriadis.Comm</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

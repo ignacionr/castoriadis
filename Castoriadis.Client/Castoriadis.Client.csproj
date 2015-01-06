@@ -31,9 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="NetMQ">
-      <HintPath>packages\NetMQ.3.3.0.11\lib\net40\NetMQ.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="ServiceStack.Text">
       <HintPath>packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
@@ -47,13 +44,15 @@
     <Compile Include="Pool.cs" />
     <Compile Include="ServiceRegistration.cs" />
     <Compile Include="IAgora.cs" />
-    <Compile Include="ISocket.cs" />
-    <Compile Include="INetworkContext.cs" />
-    <Compile Include="NetMQNetworkContext.cs" />
-    <Compile Include="SocketWrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Castoriadis.Comm\Castoriadis.Comm.csproj">
+      <Project>{5B8FA4CC-E284-486D-BC79-89C84BC17E84}</Project>
+      <Name>Castoriadis.Comm</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

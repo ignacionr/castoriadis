@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using Castoriadis.Comm;
 
 namespace Castoriadis.Client.Test
 {

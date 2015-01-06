@@ -1,22 +1,22 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using NetMQ;
 using System.Threading.Tasks;
 using ServiceStack.Text;
 using ServiceStack;
+using Castoriadis.Comm;
 
 namespace Castoriadis.Server
 {
-	public class NamespaceBinding: IDisposable
+	public class NamespaceBinding: INamespaceBinding
 	{
 		string nsName;
 
 		int bindingPort;
 
-		NetMQ.Sockets.ResponseSocket sock;
+		ISocket sock;
 
-		static NetMQContext _mqContext = NetMQ.NetMQContext.Create();
+		static INetworkContext _mqContext = new NetMQNetworkContext();
 
 		public static NamespaceBinding Create(string namespaceName, int port = 0) {
 			var result = new NamespaceBinding (namespaceName, port);
@@ -40,7 +40,7 @@ namespace Castoriadis.Server
 				torchSocket.Connect ("tcp://localhost:50111");
 				// let it know we're implementing this service
 				torchSocket.Send (message);
-				var text = torchSocket.ReceiveString ();
+				var text = torchSocket.ReceiveString (TimeSpan.FromMilliseconds(500));
 				return text;
 			}
 		}
@@ -118,12 +118,12 @@ namespace Castoriadis.Server
 			}
 		}
 
-		public NamespaceBinding HandleAll(Func<string,string,object> catcher) {
+		public INamespaceBinding HandleAll(Func<string,string,object> catcher) {
 			this.catchAll = catcher;
 			return this;
 		}
 
-		public NamespaceBinding HandleTopic<TQ>(string topic, Func<TQ,object> handler) {
+		public INamespaceBinding HandleTopic<TQ>(string topic, Func<TQ,object> handler) {
 			var jsonSer = new JsonSerializer<TQ> ();
 			this.exactHandlers.Add(topic, qs => handler(jsonSer.DeserializeFromString(qs)));
 			return this;

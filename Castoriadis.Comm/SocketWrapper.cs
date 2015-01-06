@@ -1,7 +1,7 @@
 using System;
 using NetMQ;
 
-namespace Castoriadis.Client
+namespace Castoriadis.Comm
 {
 	public class SocketWrapper: ISocket
 	{

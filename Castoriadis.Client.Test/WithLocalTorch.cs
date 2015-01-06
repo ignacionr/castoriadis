@@ -34,7 +34,7 @@ namespace Castoriadis.Client.Test
         }
 
         [Test]
-        public void registration_succeeds_for_correct_message_with_service()
+        public void RegistrationSucceedsForCorrectMessageWithService()
         {
             var response = ProcessCommand("get-registrations");
             Assert.IsFalse(response.Contains("test2-ns"));
@@ -45,7 +45,7 @@ namespace Castoriadis.Client.Test
         }
 
         [Test]
-        public void caller_socket_binds_to_registered_uri()
+        public void CallerSocketBindsToRegisteredUri()
         {
             int port = 44567;
             var endpoint = string.Format("tcp://localhost:{0}", port);
@@ -57,7 +57,7 @@ namespace Castoriadis.Client.Test
                 ms.processConnect = ep => actualEndpoint = ep;
                 ms.receivedStrings.Enqueue("OK");
             };
-            var result = this.target.ResolveSingle("test3-ns", "test", null);
+            this.target.ResolveSingle("test3-ns", "test", null);
             Assert.AreEqual(endpoint, actualEndpoint);
         }
 

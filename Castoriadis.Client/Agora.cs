@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NetMQ;
 using ServiceStack;
+using Castoriadis.Comm;
 
 namespace Castoriadis.Client
 {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Castoriadis.Client
+namespace Castoriadis.Comm
 {
 	public interface ISocket: IDisposable
 	{

@@ -1,7 +1,8 @@
 using System;
 using NetMQ;
+using Castoriadis.Comm;
 
-namespace Castoriadis.Client
+namespace Castoriadis.Comm
 {
 	public class NetMQNetworkContext: INetworkContext
 	{
