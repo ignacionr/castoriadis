@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading.Tasks;
-using ServiceStack.Text;
-using ServiceStack;
 using Castoriadis.Comm;
+using Newtonsoft.Json;
 
 namespace Castoriadis.Server
 {
@@ -16,9 +14,9 @@ namespace Castoriadis.Server
 
 		ISocket sock;
 
-		static INetworkContext _mqContext = new NetMQNetworkContext();
+		static public INetworkContext _mqContext = new NetMQNetworkContext();
 
-		public static NamespaceBinding Create(string namespaceName, int port = 0) {
+		public static INamespaceBinding Create(string namespaceName, int port = 0) {
 			var result = new NamespaceBinding (namespaceName, port);
 			if (port == 0) {
 				var rnd = new Random ();
@@ -51,7 +49,9 @@ namespace Castoriadis.Server
 			                             this.nsName, 
 			                             System.Net.Dns.GetHostName(),
 			                             this.bindingPort,
-			                             Assembly.GetEntryAssembly ().Location.Replace (" ", "%20"));
+			                             //Assembly.GetEntryAssembly ().Location.Replace (" ", "%20")
+			                             "assembly-location-goes-here"
+			                             );
 			TellTorch (message);
 		}
 
@@ -84,7 +84,8 @@ namespace Castoriadis.Server
 			                             this.nsName, 
 			                             System.Net.Dns.GetHostName(),
 			                             this.bindingPort,
-			                             Assembly.GetEntryAssembly ().Location.Replace (" ", "%20"));
+			                             // Assembly.GetEntryAssembly ().Location.Replace (" ", "%20")
+			                             "assembly-location-goes-here");
 			TellTorch (message);
 		}
 
@@ -92,30 +93,31 @@ namespace Castoriadis.Server
 		Func<string,string,object> catchAll;
 
 		public Task RunService() {
-			for (;;) {
-				var cmd = this.sock.ReceiveString (TimeSpan.FromMilliseconds (500));
-				if (!string.IsNullOrEmpty (cmd)) {
-					// evaluate which handler will process it, and thus the shape of the query object
-					var idxSpace = cmd.IndexOf (' ');
-					var item = (idxSpace >= 0) ? cmd.Substring (0, idxSpace) : cmd;
-				var query = (idxSpace >= 0) ? cmd.Substring (idxSpace + 1) : string.Empty;
-					object result = null;
-					bool handled = false;
-					Func<string,object> exactHandler = null;
-					if (this.exactHandlers.TryGetValue(item, out exactHandler)) {
-						result = exactHandler (query);
-						handled = true;
+			return Task.Run (() => {
+				for (;;) {
+					var cmd = this.sock.ReceiveString (TimeSpan.FromMilliseconds (500));
+					if (!string.IsNullOrEmpty (cmd)) {
+						// evaluate which handler will process it, and thus the shape of the query object
+						var idxSpace = cmd.IndexOf (' ');
+						var item = (idxSpace >= 0) ? cmd.Substring (0, idxSpace) : cmd;
+						var query = (idxSpace >= 0) ? cmd.Substring (idxSpace + 1) : string.Empty;
+						object result = null;
+						bool handled = false;
+						Func<string,object> exactHandler = null;
+						if (this.exactHandlers.TryGetValue (item, out exactHandler)) {
+							result = exactHandler (query);
+							handled = true;
+						} else if (catchAll != null) {
+							result = catchAll (item, query);
+							handled = true;
+						}
+						if (!handled) {
+							result = "Command not found!";
+						}
+						this.sock.Send (JsonConvert.SerializeObject(result));
 					}
-					else if (catchAll != null) {
-						result = catchAll (item, query);
-						handled = true;
-					}
-					if (!handled) {
-						result = "Command not found!";
-					}
-					this.sock.Send (result.ToJson());
 				}
-			}
+			});
 		}
 
 		public INamespaceBinding HandleAll(Func<string,string,object> catcher) {
@@ -124,8 +126,7 @@ namespace Castoriadis.Server
 		}
 
 		public INamespaceBinding HandleTopic<TQ>(string topic, Func<TQ,object> handler) {
-			var jsonSer = new JsonSerializer<TQ> ();
-			this.exactHandlers.Add(topic, qs => handler(jsonSer.DeserializeFromString(qs)));
+			this.exactHandlers.Add(topic, qs => handler(JsonConvert.DeserializeObject<TQ>(qs)));
 			return this;
 		}
 

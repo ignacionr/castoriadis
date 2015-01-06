@@ -32,8 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\Castoriadis.Client\packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
