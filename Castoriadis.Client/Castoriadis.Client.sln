@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Console.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Client.Test", "..\Castoriadis.Client.Test\Castoriadis.Client.Test.csproj", "{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Castoriadis.Test", "..\Calendar.Castoriadis.Test\Calendar.Castoriadis.Test.csproj", "{77F77B81-7441-42C6-BA7D-6654CFEC11BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F77B81-7441-42C6-BA7D-6654CFEC11BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F77B81-7441-42C6-BA7D-6654CFEC11BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F77B81-7441-42C6-BA7D-6654CFEC11BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F77B81-7441-42C6-BA7D-6654CFEC11BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU

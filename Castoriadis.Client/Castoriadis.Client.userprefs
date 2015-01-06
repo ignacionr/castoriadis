@@ -1,39 +1,35 @@
-﻿<Properties>
+﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../Castoriadis.Client.Test/Basic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Calendar.Castoriadis.Test/BasicTest.cs">
     <Files>
-      <File FileName="Torch.cs" Line="1" Column="1" />
-      <File FileName="Pool.cs" Line="1" Column="1" />
-      <File FileName="PoolResource.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Server/NamespaceBinding.cs" Line="1" Column="1" />
-      <File FileName="../Calculator.Castoriadis/Program.cs" Line="1" Column="1" />
-      <File FileName="../Metwit.Castoriadis/LatLong.cs" Line="1" Column="1" />
-      <File FileName="Agora.cs" Line="1" Column="1" />
-      <File FileName="../Metwit.Castoriadis/Program.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console/SemanticContext.cs" Line="18" Column="4" />
-      <File FileName="../Castoriadis.Console/NamespaceContext.cs" Line="13" Column="3" />
-      <File FileName="../Castoriadis.Console/Program.cs" Line="1" Column="1" />
-      <File FileName="ServiceRegistration.cs" Line="1" Column="1" />
-      <File FileName="../Calendar.Castoriadis/Program.cs" Line="1" Column="1" />
-      <File FileName="../Calendar.Castoriadis/CalendarReference.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Console.Test/Basic.cs" Line="1" Column="1" />
       <File FileName="../Calendar.Castoriadis/CalendarManager.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console.Test/MyClass.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console.Test/Basic.cs" Line="24" Column="46" />
-      <File FileName="../Castoriadis.Console/GlobalContext.cs" Line="17" Column="34" />
-      <File FileName="IAgora.cs" Line="1" Column="1" />
-      <File FileName="../Castoriadis.Console.Test/AgoraMock.cs" Line="25" Column="36" />
-      <File FileName="../Castoriadis.Client.Test/Basic.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis/CalendarReference.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis/Program.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis.Test/BasicTest.cs" Line="8" Column="3" />
+      <File FileName="../Castoriadis.Server/NamespaceBinding.cs" Line="1" Column="1" />
+      <File FileName="../Castoriadis.Server/INamespaceBinding.cs" Line="1" Column="1" />
+      <File FileName="../Calendar.Castoriadis.Test/MockedNamespaceBinding.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Castoriadis.Client.Test" expanded="True" selected="True" />
+          <Node name="Calendar.Castoriadis" expanded="True" />
+          <Node name="Calendar.Castoriadis.Test" expanded="True" />
+          <Node name="Castoriadis.Console.Test" selected="True" />
+          <Node name="Castoriadis.Server" expanded="True" />
         </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
           <Value>query</Value>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
