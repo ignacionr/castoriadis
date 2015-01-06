@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Client", "Castoriadis.Client\Castoriadis.Client.csproj", "{194A355B-439C-403A-889D-90A14A4F7BF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Server", "Castoriadis.Server\Castoriadis.Server.csproj", "{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Console", "Castoriadis.Console\Castoriadis.Console.csproj", "{DCEC7D68-1927-46A1-A55B-579764D5CD2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Castoriadis", "Calculator.Castoriadis\Calculator.Castoriadis.csproj", "{6016AF97-56F4-48C9-80D1-A9A2C6B86437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metwit.Castoriadis", "Metwit.Castoriadis\Metwit.Castoriadis.csproj", "{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Castoriadis", "Calendar.Castoriadis\Calendar.Castoriadis.csproj", "{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Console.Test", "Castoriadis.Console.Test\Castoriadis.Console.Test.csproj", "{84BC2ADA-1857-452E-A42D-8611239CE0A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Client.Test", "Castoriadis.Client.Test\Castoriadis.Client.Test.csproj", "{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Server.Test", "Castoriadis.Server.Test\Castoriadis.Server.Test.csproj", "{A8B38CB0-2F32-4CA7-9466-82BD07663120}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Comm", "Castoriadis.Comm\Castoriadis.Comm.csproj", "{5B8FA4CC-E284-486D-BC79-89C84BC17E84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3E289C-3FC0-47BE-A3B5-00607D4A5A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6016AF97-56F4-48C9-80D1-A9A2C6B86437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84BC2ADA-1857-452E-A42D-8611239CE0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B38CB0-2F32-4CA7-9466-82BD07663120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B38CB0-2F32-4CA7-9466-82BD07663120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B38CB0-2F32-4CA7-9466-82BD07663120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B38CB0-2F32-4CA7-9466-82BD07663120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FBB940-48DD-44E0-95B0-A39A615ADFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Castoriadis.Console\Castoriadis.Console.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+	EndGlobalSection
+EndGlobal

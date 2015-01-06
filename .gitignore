@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+*.userprefs
 
 # Build results
 [Dd]ebug/
@@ -28,6 +29,7 @@ bld/
 #NUNIT
 *.VisualState.xml
 TestResult.xml
+test-results
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
