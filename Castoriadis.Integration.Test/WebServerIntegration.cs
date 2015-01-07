@@ -8,7 +8,7 @@ using System.Net;
 namespace Castoriadis.Integration.Test
 {
 	[TestFixture()]
-	public class Test
+	public class WebServerIntegration
 	{
 		[Test()]
 		public void WebServerStartsAndResponds404 ()

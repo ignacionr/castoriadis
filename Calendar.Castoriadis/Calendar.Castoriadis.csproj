@@ -41,6 +41,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CalendarReference.cs" />
     <Compile Include="CalendarManager.cs" />
+    <Compile Include="CalendarViewModel.cs" />
+    <Compile Include="FreeBusyViewModel.cs" />
+    <Compile Include="CalendarDateRange.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

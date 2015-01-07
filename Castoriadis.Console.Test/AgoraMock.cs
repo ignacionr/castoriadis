@@ -26,7 +26,7 @@ namespace Castoriadis.Console.Test
 					Provider = "dummyprovider.exe"
 				}};
 		}
-		public RT ResolveSingle<RT>(string ns, string item, object query)
+		public RT ResolveSingle<RT>(string ns, string item, object query, int timeout = 500)
 		{
 			this.lastItem = item;
 			this.lastQuery = query;

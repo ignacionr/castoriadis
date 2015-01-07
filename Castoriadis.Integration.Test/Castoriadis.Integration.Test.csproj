@@ -35,9 +35,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="WebServerIntegration.cs" />
+    <Compile Include="CalendarIntegration.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -52,6 +54,10 @@
     <ProjectReference Include="..\Castoriadis.Comm\Castoriadis.Comm.csproj">
       <Project>{5B8FA4CC-E284-486D-BC79-89C84BC17E84}</Project>
       <Name>Castoriadis.Comm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calendar.Castoriadis\Calendar.Castoriadis.csproj">
+      <Project>{097E5E3E-D9E7-4FAB-BE8C-4B3357A5E323}</Project>
+      <Name>Calendar.Castoriadis</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

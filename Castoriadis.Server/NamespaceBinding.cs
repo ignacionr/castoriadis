@@ -103,18 +103,27 @@ namespace Castoriadis.Server
 						var query = (idxSpace >= 0) ? cmd.Substring (idxSpace + 1) : string.Empty;
 						object result = null;
 						bool handled = false;
-						Func<string,object> exactHandler = null;
-						if (this.exactHandlers.TryGetValue (item, out exactHandler)) {
-							result = exactHandler (query);
-							handled = true;
-						} else if (catchAll != null) {
-							result = catchAll (item, query);
-							handled = true;
+						try {
+							Func<string,object> exactHandler = null;
+							if (this.exactHandlers.TryGetValue (item, out exactHandler)) {
+								result = exactHandler (query);
+								handled = true;
+							} else if (catchAll != null) {
+								result = catchAll (item, query);
+								handled = true;
+							}
+							if (!handled) {
+								result = "Command not found!";
+							}
+							this.sock.Send (JsonConvert.SerializeObject(result));
 						}
-						if (!handled) {
-							result = "Command not found!";
+						catch(Exception ex) {
+							this.sock.Send(JsonConvert.SerializeObject(new { 
+								error = ex.Message,
+								success = false,
+								errorType = ex.GetType().Name
+							}));
 						}
-						this.sock.Send (JsonConvert.SerializeObject(result));
 					}
 				}
 			});

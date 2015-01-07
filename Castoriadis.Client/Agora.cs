@@ -42,7 +42,7 @@ namespace Castoriadis.Client
 			return this.torch.GetRegistrations ();
 		}
 
-		public RT ResolveSingle<RT>(string ns, string item, object query) {
+		public RT ResolveSingle<RT>(string ns, string item, object query, int timeout = 500) {
 			// find the registration
 			var regs = this.torch.GetNamespaceRegistrations(ns).Select(reg => reg.Endpoint).ToList();
 			// obtain a connected socket
@@ -50,7 +50,7 @@ namespace Castoriadis.Client
 				// issue the query
 				sock.R.Send (query == null ? item : string.Join (" ", item, JsonConvert.SerializeObject(query)));
 				// unpack the results
-				var text = sock.R.ReceiveString(TimeSpan.FromMilliseconds(500));
+				var text = sock.R.ReceiveString(TimeSpan.FromMilliseconds(timeout));
 				if (text == null) {
 					throw new TimeoutException ();
 				}
