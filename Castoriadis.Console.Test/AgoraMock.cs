@@ -26,11 +26,11 @@ namespace Castoriadis.Console.Test
 					Provider = "dummyprovider.exe"
 				}};
 		}
-		public dynamic ResolveSingle (string ns, string item, object query)
+		public RT ResolveSingle<RT>(string ns, string item, object query)
 		{
 			this.lastItem = item;
 			this.lastQuery = query;
-			return true;
+			return (RT)Convert.ChangeType (true, typeof(RT));
 		}
 		#endregion
 	}

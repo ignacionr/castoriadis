@@ -22,7 +22,7 @@ namespace Castoriadis.Comm
 
 		public ISocket CreateResponseSocket ()
 		{
-			throw new NotImplementedException ();
+			return new SocketWrapper (netMqContext.CreateResponseSocket ());
 		}
 
 		#endregion

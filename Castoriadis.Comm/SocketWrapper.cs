@@ -6,7 +6,7 @@ namespace Castoriadis.Comm
 	public class SocketWrapper: ISocket
 	{
 		NetMQSocket socket;
-		public SocketWrapper (NetMQ.Sockets.RequestSocket requestSocket)
+		public SocketWrapper (NetMQ.NetMQSocket requestSocket)
 		{
 			this.socket = requestSocket;
 		}

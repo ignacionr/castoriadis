@@ -55,10 +55,10 @@ namespace Castoriadis.Client.Test
             this.networkContext.mockSocketCreated = ms =>
             {
                 ms.processConnect = ep => actualEndpoint = ep;
-                ms.receivedStrings.Enqueue("OK");
+                ms.receivedStrings.Enqueue("\"OK\"");
             };
-            this.target.ResolveSingle("test3-ns", "test", null);
-            Assert.AreEqual(endpoint, actualEndpoint);
+            var actualResponse = this.target.ResolveSingle<object>("test3-ns", "test", null);
+			Assert.AreEqual(endpoint, actualEndpoint);
         }
 
         private string ProcessCommand(string cmdText)

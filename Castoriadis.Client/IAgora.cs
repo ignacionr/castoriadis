@@ -7,7 +7,7 @@ namespace Castoriadis.Client
 		void Refresh();
 		string Who();
 		ServiceRegistration[] GetRegistrations ();
-		dynamic ResolveSingle(string ns, string item, object query);
+		RT ResolveSingle<RT>(string ns, string item, object query);
 	}
 }
 

@@ -28,7 +28,7 @@ namespace Castoriadis.Console
 			if (token == "back")
 				return t => parentContext;
 			return t => {
-				this.Result = parentContext.agora.ResolveSingle (nsName, token, t);
+				this.Result = parentContext.agora.ResolveSingle<dynamic>(nsName, token, t);
 				return this;
 			};
 		}

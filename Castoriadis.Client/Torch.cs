@@ -3,8 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Reflection;
-using ServiceStack;
 using Castoriadis.Comm;
+using Newtonsoft.Json;
 
 namespace Castoriadis.Client
 {
@@ -48,7 +48,7 @@ namespace Castoriadis.Client
 					this.sock.Dispose ();
 				}
 				this.sock = this.netMqContext.CreateRequestSocket ();
-				this.sock.Bind ("tcp://localhost:50111");
+				this.sock.Connect ("tcp://localhost:50111");
 				this.Refresh ();
 			}
 		}
@@ -111,7 +111,7 @@ namespace Castoriadis.Client
 						if (!handlers.TryGetValue (parts [0], out handler)) {
 							handler = not_found;
 						}
-						this.sock.Send(DynamicJson.Serialize(handler(parts)));
+						this.sock.Send(JsonConvert.SerializeObject(handler(parts)));
 					}
 					catch(Exception ex) {
 						this.sock.Send (ex.Message);
@@ -131,7 +131,7 @@ namespace Castoriadis.Client
 			if (!this.IsLocal) {
 				this.sock.Send ("get-registrations");
 				var text = this.sock.ReceiveString (TimeSpan.FromMilliseconds(500));
-				this.nsRegistrations = text.FromJson<Dictionary<string,List<ServiceRegistration>>>();
+				this.nsRegistrations = JsonConvert.DeserializeObject<Dictionary<string,List<ServiceRegistration>>>(text);
 			}
 		}
 
