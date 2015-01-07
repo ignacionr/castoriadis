@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Comm", "Castoriadis.Comm\Castoriadis.Comm.csproj", "{5B8FA4CC-E284-486D-BC79-89C84BC17E84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Client", "Castoriadis.Client\Castoriadis.Client.csproj", "{194A355B-439C-403A-889D-90A14A4F7BF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194A355B-439C-403A-889D-90A14A4F7BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Release|Any CPU.ActiveCfg = Release|Any CPU

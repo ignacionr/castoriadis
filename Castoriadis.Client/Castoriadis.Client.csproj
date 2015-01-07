@@ -35,6 +35,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NetMQ">
+      <HintPath>..\packages\NetMQ.3.3.0.11\lib\net40\NetMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Castoriadis.Comm">
+      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00002\lib\net45\Castoriadis.Comm.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,11 +54,5 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Castoriadis.Comm\Castoriadis.Comm.csproj">
-      <Project>{5B8FA4CC-E284-486D-BC79-89C84BC17E84}</Project>
-      <Name>Castoriadis.Comm</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
