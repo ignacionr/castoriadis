@@ -62,5 +62,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Castoriadis.Client.nuspec" />
   </ItemGroup>
 </Project>
