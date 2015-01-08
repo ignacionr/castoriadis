@@ -6,17 +6,16 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <projectUrl>https://github.com/ignacionr/castoriadis</projectUrl>
+    <iconUrl>https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c2.0.160.160/p160x160/10897864_1555611861351403_5344559415878976233_n.jpg?oh=da4b0bc77d977246d862292a57bcb446&amp;oe=5523433D&amp;__gda__=1429047930_14150550e1e89125c425f2830c16dd05</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
     	<dependency id="Castoriadis.Comm" version="1.0.0-CI00003" />
     	<dependency id="Newtonsoft.Json" version="6.0.7" />
     </dependencies>
     <description>$description$</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>This is Castoriadis Framework's baseline.</releaseNotes>
     <copyright>Copyright 2015</copyright>
-    <tags>Tag1 Tag2</tags>
+    <tags>0MQ Microservices Micro Services ZeroMQ</tags>
   </metadata>
 </package>
