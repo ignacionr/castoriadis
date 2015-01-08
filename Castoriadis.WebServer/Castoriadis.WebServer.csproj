@@ -32,23 +32,20 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Castoriadis.Client">
-      <HintPath>..\packages\Castoriadis.Client.1.0.0-CI00005\lib\net45\Castoriadis.Client.dll</HintPath>
-    </Reference>
     <Reference Include="NetMQ">
       <HintPath>..\packages\NetMQ.3.3.0.11\lib\net40\NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="Castoriadis.Comm">
-      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00005\lib\net45\Castoriadis.Comm.dll</HintPath>
+      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00003\lib\net45\Castoriadis.Comm.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
-    </Reference>
     <Reference Include="Castoriadis.Server">
-      <HintPath>..\packages\Castoriadis.Server.1.0.0-CI00005\lib\net45\Castoriadis.Server.dll</HintPath>
+      <HintPath>..\packages\Castoriadis.Server.1.0.0-CI00006\lib\net45\Castoriadis.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Castoriadis.Client">
+      <HintPath>..\packages\Castoriadis.Client.1.0.0-CI00007\lib\net45\Castoriadis.Client.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -62,5 +59,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Castoriadis.WebServer.nuspec" />
   </ItemGroup>
 </Project>
