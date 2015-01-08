@@ -19,7 +19,8 @@ namespace Castoriadis.Client
 			return sock;
 		}
 
-		public Agora(INetworkContext networkContext = null) {
+		public Agora(INetworkContext networkContext = null) 
+		{
 			if (networkContext == null) {
 				networkContext = new NetMQNetworkContext ();
 			}
@@ -42,7 +43,8 @@ namespace Castoriadis.Client
 			return this.torch.GetRegistrations ();
 		}
 
-		public RT ResolveSingle<RT>(string ns, string item, object query, int timeout = 500) {
+		public RT ResolveSingle<RT>(string ns, string item, object query, int timeout = 500) 
+		{
 			// find the registration
 			var regs = this.torch.GetNamespaceRegistrations(ns).Select(reg => reg.Endpoint).ToList();
 			// obtain a connected socket

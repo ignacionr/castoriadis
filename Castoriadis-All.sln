@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.WebServer.Test"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Integration.Test", "Castoriadis.Integration.Test\Castoriadis.Integration.Test.csproj", "{4E025188-EAC5-4E98-B62E-AB7CF768546C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Founder.NuGet", "Castoriadis.Founder.NuGet\Castoriadis.Founder.NuGet.csproj", "{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Founder.NuGet.Test", "Castoriadis.Founder.NuGet.Test\Castoriadis.Founder.NuGet.Test.csproj", "{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCEC7D68-1927-46A1-A55B-579764D5CD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
