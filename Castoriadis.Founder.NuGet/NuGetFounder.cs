@@ -22,16 +22,36 @@ namespace Castoriadis.Founder
 				//Initialize the package manager
 				var entryAssembly = Assembly.GetEntryAssembly ();
 				var path = entryAssembly == null ? "." : Path.GetDirectoryName(entryAssembly.Location);
+				path = Path.Combine (path, nsName);
+				Directory.CreateDirectory (path);
+
 				var packageManager = new PackageManager(repo, path);
 
 				//Download and unzip the package
 				packageManager.InstallPackage(package, null, false, true);
 
-				// find the EXE
+				// copy all EXEs and DLLs to the root install
 				var di = new DirectoryInfo (path);
-				var usedpath = di.GetDirectories ().FirstOrDefault (subd => subd.Name.ToUpper ().Contains (package.ToUpper ()));
-				var exeFile = usedpath.GetFiles ("*.exe",SearchOption.AllDirectories).First ();
-				using (var proc = Process.Start(new ProcessStartInfo(exeFile.FullName))) 
+				new[]{"*.dll","*.exe"}.SelectMany(ext => di.GetFiles(ext, SearchOption.AllDirectories))
+					.ToList()
+						.ForEach(fi => {
+							var dest = Path.Combine(path, fi.Name);
+							if (Path.GetFullPath(dest) != fi.FullName) {
+								if (File.Exists(dest))
+									File.Delete(dest);
+								fi.CopyTo(dest);
+							}
+						});
+
+				// find the EXE
+				var exeFile = di.GetFiles ("*.exe").First ();
+#if __MonoCS__
+				var module = Assembly.Load("Mono.Posix, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756");
+				var type = module.GetType("Mono.Unix.Native.Syscall");
+				var chmodMI = type.GetMethod("chmod");
+				chmodMI.Invoke(null, new object[]{exeFile.FullName, 4095u});
+#endif
+				using (var proc = Process.Start(exeFile.FullName)) 
 				{
 					if (proc == null) {
 						// try to determine why...
