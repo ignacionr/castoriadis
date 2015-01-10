@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Server", "Casto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.WebServer", "Castoriadis.WebServer\Castoriadis.WebServer.csproj", "{2CD712B9-FC51-468A-87C2-C316D19E10A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.Founder.NuGet", "Castoriadis.Founder.NuGet\Castoriadis.Founder.NuGet.csproj", "{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B8FA4CC-E284-486D-BC79-89C84BC17E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4622F0-BAC2-4AAE-B2D1-CE0EB73B313D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD27FF4-7E4D-48EB-ACB1-59F9CD525E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
