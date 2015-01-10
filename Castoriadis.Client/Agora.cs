@@ -46,7 +46,16 @@ namespace Castoriadis.Client
 		public RT ResolveSingle<RT>(string ns, string item, object query, int timeout = 500) 
 		{
 			// find the registration
-			var regs = this.torch.GetNamespaceRegistrations(ns).Select(reg => reg.Endpoint).ToList();
+			var r = this.torch.GetNamespaceRegistrations (ns);
+			if (null == r) {
+				// refresh once before faulting
+				this.Refresh ();
+				r = this.torch.GetNamespaceRegistrations (ns);
+				if (null == r) {
+					throw new Exception (string.Format ("Service {0} is not registered.", ns));
+				}
+			}
+			var regs = r.Select(reg => reg.Endpoint).ToList();
 			// obtain a connected socket
 			using (var sock = socketPool.Get (regs)) {
 				// issue the query
