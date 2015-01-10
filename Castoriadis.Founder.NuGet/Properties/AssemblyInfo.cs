@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle ("Castoriadis.Founder.NuGet")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("A client library for automatically installing NuGet-delivered Castoriadis packages")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
-[assembly: AssemblyProduct ("")]
+[assembly: AssemblyCompany ("Ignacio Rodriguez")]
+[assembly: AssemblyProduct ("Castoriadis")]
 [assembly: AssemblyCopyright ("Ignacio Rodriguez")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]

@@ -4,10 +4,10 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle ("Castoriadis.WebServer")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("A Castoriadis Microservice providing Web httpd")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
-[assembly: AssemblyProduct ("")]
+[assembly: AssemblyCompany ("Ignacio Rodriguez")]
+[assembly: AssemblyProduct ("Castoriadis")]
 [assembly: AssemblyCopyright ("Ignacio Rodriguez")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
