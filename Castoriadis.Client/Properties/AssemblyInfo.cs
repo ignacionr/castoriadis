@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("Ignacio Rodriguez")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("Ignacio Rodriguez")
+[assembly: AssemblyCopyright ("Ignacio Rodriguez")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
