@@ -12,8 +12,6 @@
     <dependencies>
     	<dependency id="Newtonsoft.Json" version="6.0.7" />
     	<dependency id="Castoriadis.Client" version="1.0.0-CI00007" />
-    	<dependency id="Mono.NuGet.Core" version="2.8.1" />
-    	<dependency id="NuGet.Core" version="2.8.3" />
     </dependencies>
     <description>$description$</description>
     <releaseNotes>This is Castoriadis Framework's baseline.</releaseNotes>
