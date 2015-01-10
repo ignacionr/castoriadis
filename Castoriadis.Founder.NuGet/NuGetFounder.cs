@@ -1,11 +1,11 @@
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Threading;
 using Castoriadis.Client;
 using NuGet;
-using System.Reflection;
-using System.IO;
-using System.Diagnostics;
-using System.Threading;
 
 namespace Castoriadis.Founder
 {
