@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle ("Castoriadis.Client")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("Library for easily using Castoriadis Microservices from C#")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany ("Ignacio Rodriguez")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("ignacio")]
+[assembly: AssemblyCopyright ("Ignacio Rodriguez")
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".

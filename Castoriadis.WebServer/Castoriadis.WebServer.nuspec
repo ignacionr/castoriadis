@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
     	<dependency id="Castoriadis.Server" version="1.0.0-CI00006" />
-    	<dependency id="Newtonsoft.Json" version="6.0.7" targetFramework="net45" />
+    	<dependency id="Newtonsoft.Json" version="6.0.7" />
     	<dependency id="Castoriadis.Client" version="1.0.0-CI00007" />
     </dependencies>
     <description>$description$</description>
