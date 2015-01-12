@@ -59,7 +59,8 @@ namespace Castoriadis.Client
 			// obtain a connected socket
 			using (var sock = socketPool.Get (regs)) {
 				// issue the query
-				sock.R.Send (query == null ? item : string.Join (" ", item, JsonConvert.SerializeObject(query)));
+				sock.R.Send (query == null ? item : string.Join (" ", item, 
+					query is string ? (string) query : JsonConvert.SerializeObject(query)));
 				// unpack the results
 				var text = sock.R.ReceiveString(TimeSpan.FromMilliseconds(timeout));
 				if (text == null) {
