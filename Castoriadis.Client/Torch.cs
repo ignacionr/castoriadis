@@ -147,7 +147,15 @@ namespace Castoriadis.Client
 			if (!this.IsLocal) {
 				this.sock.Send ("get-registrations");
 				var text = this.sock.ReceiveString (TimeSpan.FromMilliseconds(500));
-				this.nsRegistrations = JsonConvert.DeserializeObject<Dictionary<string,List<ServiceRegistration>>>(text);
+                if (text == null)
+                {
+                    // watch out! the torch was killed, now get the torch
+                    this.Start();
+                }
+                else
+                {
+                    this.nsRegistrations = JsonConvert.DeserializeObject<Dictionary<string, List<ServiceRegistration>>>(text);
+                }
 			}
 		}
 

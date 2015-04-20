@@ -48,12 +48,13 @@ namespace Castoriadis.Client
 			// find the registration
 			var r = this.torch.GetNamespaceRegistrations (ns);
 			if (null == r) {
-                if (this.torch.IsLocal) {
-                    this.torch.TryKnownProviders(ns);
+                if (!this.torch.IsLocal)
+                {
+                    this.Refresh();
                     r = this.torch.GetNamespaceRegistrations(ns);
                 }
-                else
-                {
+                if (null == r) {
+                    this.torch.TryKnownProviders(ns);
                     this.Refresh();
                     r = this.torch.GetNamespaceRegistrations(ns);
                 }
