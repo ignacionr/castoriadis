@@ -80,8 +80,14 @@ namespace Castoriadis.Client
 			list.Add (reg);
             Task.Run(() =>
             {
-                var dictKnown = nsRegistrations.ToDictionary(r => r.Key, r => r.Value.First());
-                File.WriteAllText(KNOWN_PROVIDERS_FILENAME, JsonConvert.SerializeObject(dictKnown));
+                var knownProviders = new Dictionary<string, string>();
+                try
+                {
+                    knownProviders = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(KNOWN_PROVIDERS_FILENAME));
+                }
+                catch(Exception) {}
+                knownProviders[reg.Namespace] = reg.Provider;
+                File.WriteAllText(KNOWN_PROVIDERS_FILENAME, JsonConvert.SerializeObject(knownProviders));
             });
 			return true;
 		}
@@ -153,8 +159,7 @@ namespace Castoriadis.Client
             if (null != location)
             {
                 Process.Start(location);
-                // and give it some time to register
-                Thread.Sleep(2000);
+                Thread.Sleep(500);
             }
         }
 

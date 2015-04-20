@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Castoriadis.Client;
+using System.Text.RegularExpressions;
 
 namespace Castoriadis.Console
 {
@@ -21,6 +22,10 @@ namespace Castoriadis.Console
 			{"who", (c,t) => {c.Result = c.agora.Who(); return c;}},
 			{"help", (c,t) => {c.Result = string.Join(",", cmdLets.Keys); return c;}},
 			{"registrations", (c,t) => {c.Result = string.Join("; ", c.agora.GetRegistrations().Select(reg => reg.ToString())); return c;}},
+            {"resolve", (c,t) => {
+                var parsed = Regex.Match(t.ToString(), "(\\S+) (\\S+)( (.*))?");
+                c.Result = c.agora.ResolveSingle<dynamic>(parsed.Groups[1].Value, 
+                    parsed.Groups[2].Value, null); return c;}},
 		};
 
 		#region implemented abstract members of SemanticContext

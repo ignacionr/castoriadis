@@ -50,6 +50,7 @@ namespace Castoriadis.Client
 			if (null == r) {
                 if (this.torch.IsLocal) {
                     this.torch.TryKnownProviders(ns);
+                    r = this.torch.GetNamespaceRegistrations(ns);
                 }
                 else
                 {

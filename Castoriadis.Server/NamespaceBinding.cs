@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Castoriadis.Comm;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Castoriadis.Server
 {
@@ -49,8 +50,7 @@ namespace Castoriadis.Server
 			                             this.nsName, 
 			                             System.Net.Dns.GetHostName(),
 			                             this.bindingPort,
-			                             //Assembly.GetEntryAssembly ().Location.Replace (" ", "%20")
-			                             "assembly-location-goes-here"
+			                             Assembly.GetEntryAssembly ().Location.Replace (" ", "%20")
 			                             );
 			TellTorch (message);
 		}
