@@ -176,6 +176,12 @@ namespace Castoriadis.Client
             }
             return null;
         }
+
+        internal void MarkFailed(string ns)
+        {
+            // this registration timed out, remove it
+            this.nsRegistrations.Remove(ns);
+        }
     }
 }
 

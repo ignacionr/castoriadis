@@ -70,6 +70,7 @@ namespace Castoriadis.Client
 				// unpack the results
 				var text = sock.R.ReceiveString(TimeSpan.FromMilliseconds(timeout));
 				if (text == null) {
+                    this.torch.MarkFailed(ns);
 					throw new TimeoutException ();
 				}
 				return JsonConvert.DeserializeObject<RT>(text);
