@@ -13,6 +13,16 @@ namespace Castoriadis.Client
 			this.resourceFactory = factory;
 		}
 
+        public void Remove(TK key)
+        {
+            List<TR> poolItem;
+            if (this.pool.TryGetValue(key, out poolItem))
+            {
+                poolItem.OfType<IDisposable>().ToList().ForEach(d => d.Dispose());
+                this.pool.Remove(key);
+            }
+        }
+
 		public PoolResource<TR> Get(TK key) {
 			List<TR> poolItem;
 			if (!this.pool.TryGetValue (key, out poolItem)) {
