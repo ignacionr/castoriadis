@@ -48,9 +48,14 @@ namespace Castoriadis.Client
 			// find the registration
 			var r = this.torch.GetNamespaceRegistrations (ns);
 			if (null == r) {
-				// refresh once before faulting
-				this.Refresh ();
-				r = this.torch.GetNamespaceRegistrations (ns);
+                if (this.torch.IsLocal) {
+                    this.torch.TryKnownProviders(ns);
+                }
+                else
+                {
+                    this.Refresh();
+                    r = this.torch.GetNamespaceRegistrations(ns);
+                }
 				if (null == r) {
 					throw new Exception (string.Format ("Service {0} is not registered.", ns));
 				}

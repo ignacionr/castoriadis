@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using Castoriadis.Client;
-using ServiceStack;
 
 namespace Castoriadis.Console
 {

@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using Castoriadis.Comm;
 using Newtonsoft.Json;
+using System.IO;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Castoriadis.Client
 {
@@ -60,6 +63,8 @@ namespace Castoriadis.Client
 			return regs;
 		}
 
+        const string KNOWN_PROVIDERS_FILENAME = "known-providers.json";
+
 		bool Register (string[] data)
 		{
 			var reg = new ServiceRegistration { 
@@ -73,6 +78,11 @@ namespace Castoriadis.Client
 				nsRegistrations [reg.Namespace] = list;
 			}
 			list.Add (reg);
+            Task.Run(() =>
+            {
+                var dictKnown = nsRegistrations.ToDictionary(r => r.Key, r => r.Value.First());
+                File.WriteAllText(KNOWN_PROVIDERS_FILENAME, JsonConvert.SerializeObject(dictKnown));
+            });
 			return true;
 		}
 
@@ -135,7 +145,32 @@ namespace Castoriadis.Client
 			}
 		}
 
-		bool IsLocal { get; set; }
-	}
+		public bool IsLocal { get; set; }
+
+        internal void TryKnownProviders(string ns)
+        {
+            var location = FindKnownProviderLocation(ns);
+            if (null != location)
+            {
+                Process.Start(location);
+                // and give it some time to register
+                Thread.Sleep(2000);
+            }
+        }
+
+        private string FindKnownProviderLocation(string ns)
+        {
+            try
+            {
+                var knownProviders = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(KNOWN_PROVIDERS_FILENAME));
+                return knownProviders[ns];
+            }
+            catch (Exception)
+            {
+                // can't do, just ignore
+            }
+            return null;
+        }
+    }
 }
 

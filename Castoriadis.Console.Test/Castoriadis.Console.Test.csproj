@@ -37,9 +37,6 @@
       <HintPath>..\Castoriadis.Client\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\Castoriadis.Client\packages\ServiceStack.Text.4.0.35\lib\net40\ServiceStack.Text.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
