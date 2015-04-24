@@ -37,12 +37,12 @@
       <HintPath>..\packages\AsyncIO.0.1.17.0\lib\net40\AsyncIO.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Castoriadis.Client, Version=1.0.5588.6475, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castoriadis.Client.1.0.0-CI00022\lib\net45\Castoriadis.Client.dll</HintPath>
+    <Reference Include="Castoriadis.Client, Version=1.0.5588.10413, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castoriadis.Client.1.0.0-CI00027\lib\net45\Castoriadis.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Castoriadis.Comm, Version=0.3.1.6474, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00022\lib\net45\Castoriadis.Comm.dll</HintPath>
+    <Reference Include="Castoriadis.Comm, Version=0.3.1.10413, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00027\lib\net45\Castoriadis.Comm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NetMQ, Version=3.3.0.12, Culture=neutral, PublicKeyToken=a6decef4ddc58b3a, processorArchitecture=MSIL">

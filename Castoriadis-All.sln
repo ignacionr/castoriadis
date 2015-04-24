@@ -40,6 +40,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{08F3CC
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castoriadis.XMPP", "Castoriadis.XMPP\Castoriadis.XMPP.csproj", "{90AE7644-70E5-44B1-A95C-ABDDC0808CA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,10 @@ Global
 		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEAD57D3-549A-4A18-94CA-A8BFDB96E865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90AE7644-70E5-44B1-A95C-ABDDC0808CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AE7644-70E5-44B1-A95C-ABDDC0808CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AE7644-70E5-44B1-A95C-ABDDC0808CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AE7644-70E5-44B1-A95C-ABDDC0808CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

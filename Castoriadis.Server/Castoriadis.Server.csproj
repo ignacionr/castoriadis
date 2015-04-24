@@ -36,8 +36,8 @@
       <HintPath>..\packages\AsyncIO.0.1.17.0\lib\net40\AsyncIO.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Castoriadis.Comm">
-      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00022\lib\net45\Castoriadis.Comm.dll</HintPath>
+    <Reference Include="Castoriadis.Comm, Version=0.3.1.10413, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castoriadis.Comm.1.0.0-CI00027\lib\net45\Castoriadis.Comm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NetMQ">
